@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="br.edu.unifcv.view.ProductsForm">
+  <grid id="27dc6" binding="productJPanel" layout-manager="GridBagLayout">
+    <constraints>
+      <xy x="20" y="20" width="1280" height="720"/>
+    </constraints>
+    <properties>
+      <enabled value="true"/>
+      <inheritsPopupMenu value="false"/>
+      <maximumSize width="1280" height="720"/>
+      <minimumSize width="1280" height="720"/>
+      <opaque value="false"/>
+      <preferredSize width="1280" height="720"/>
+      <requestFocusEnabled value="false"/>
+    </properties>
+    <border type="none">
+      <font name="Poppins" style="0"/>
+      <title-color color="-2695445"/>
+    </border>
+    <children>
+      <scrollpane id="a8fb1" binding="productListJScrollPane">
+        <constraints>
+          <grid row="0" column="0" row-span="12" col-span="1" vsize-policy="7" hsize-policy="0" anchor="8" fill="2" indent="0" use-parent-layout="false">
+            <preferred-size width="-1" height="1"/>
+          </grid>
+          <gridbag weightx="0.1" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <autoscrolls value="false"/>
+          <debugGraphicsOptions value="0"/>
+          <doubleBuffered value="false"/>
+          <font name="Poppins" style="0"/>
+          <horizontalScrollBarPolicy value="31"/>
+          <inheritsPopupMenu value="false"/>
+          <name value="Produtos"/>
+          <requestFocusEnabled value="true"/>
+          <verticalScrollBarPolicy value="22"/>
+          <wheelScrollingEnabled value="true"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="7c3fc" class="javax.swing.JList" binding="productJList">
+            <constraints/>
+            <properties>
+              <enabled value="true"/>
+              <fixedCellHeight value="-1"/>
+              <font name="Poppins Light"/>
+              <selectionMode value="0"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
+      <component id="f86db" class="javax.swing.JLabel" binding="descriptionJLabel">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="20" left="0" bottom="5" right="0" weightx="1.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <font name="Poppins" size="14"/>
+          <horizontalTextPosition value="11"/>
+          <labelFor value="a2657"/>
+          <text resource-bundle="products" key="label.descricao"/>
+          <toolTipText value=""/>
+        </properties>
+      </component>
+      <component id="a2657" class="javax.swing.JTextField" binding="descriptionJField">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <gridbag top="5" left="0" bottom="5" right="0" weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <font name="Poppins Light" size="11" style="0"/>
+          <opaque value="true"/>
+          <preferredSize width="50" height="40"/>
+        </properties>
+      </component>
+      <component id="642a8" class="javax.swing.JLabel" binding="fullDescriptionJLabel">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="20" left="0" bottom="5" right="0" weightx="1.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <font name="Poppins" size="14"/>
+          <horizontalTextPosition value="11"/>
+          <labelFor value="66284"/>
+          <text resource-bundle="products" key="label.descricao.detalhada"/>
+          <toolTipText value=""/>
+        </properties>
+      </component>
+      <scrollpane id="30c70" binding="fullDescriptionJScrollPane">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="2" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="1.0" weighty="0.5"/>
+        </constraints>
+        <properties>
+          <autoscrolls value="true"/>
+          <horizontalScrollBarPolicy value="31"/>
+          <verticalScrollBarPolicy value="20"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="66284" class="javax.swing.JTextArea" binding="fullDescriptionJTextArea">
+            <constraints/>
+            <properties>
+              <font name="Poppins Light" size="11" style="0"/>
+              <lineWrap value="true"/>
+              <maximumSize width="200" height="27"/>
+              <name value="Insira aqui uma descrição detalhada"/>
+              <preferredSize width="255" height="30"/>
+              <wrapStyleWord value="true"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
+      <grid id="a6fd6" binding="pricesJPanel" layout-manager="GridBagLayout">
+        <constraints>
+          <grid row="6" column="1" row-span="1" col-span="4" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="f33e0" class="javax.swing.JLabel" binding="buyPriceJLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag top="20" left="0" bottom="5" right="0" weightx="1.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <font name="Poppins" size="14"/>
+              <horizontalTextPosition value="11"/>
+              <labelFor value="34c99"/>
+              <text resource-bundle="products" key="label.preco.de.custo"/>
+              <toolTipText value=""/>
+            </properties>
+          </component>
+          <vspacer id="78703">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+          </vspacer>
+          <component id="f7099" class="javax.swing.JLabel" binding="sellPriceJLabel">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag top="20" left="0" bottom="5" right="0" weightx="1.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <font name="Poppins" size="14"/>
+              <horizontalTextPosition value="11"/>
+              <labelFor value="dafef"/>
+              <text resource-bundle="products" key="label.preco.de.venda"/>
+              <toolTipText value=""/>
+            </properties>
+          </component>
+          <component id="dafef" class="javax.swing.JFormattedTextField" binding="sellPriceJFormattedTextField">
+            <constraints>
+              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+              <gridbag weightx="0.2" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <focusLostBehavior value="0"/>
+              <font name="Poppins Light" size="11" style="0"/>
+              <maximumSize width="30" height="30"/>
+              <preferredSize width="6" height="21"/>
+            </properties>
+          </component>
+          <component id="34c99" class="javax.swing.JFormattedTextField" binding="buyPriceFormattedTextField">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+            <properties>
+              <focusLostBehavior value="0"/>
+              <font name="Poppins Light" size="11" style="0"/>
+              <maximumSize width="30" height="30"/>
+              <preferredSize width="6" height="21"/>
+            </properties>
+          </component>
+          <hspacer id="78d24">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag top="0" left="0" bottom="0" right="10" weightx="0.35" weighty="0.0"/>
+            </constraints>
+          </hspacer>
+        </children>
+      </grid>
+      <grid id="bb1fe" binding="amountsJPanel" layout-manager="GridLayoutManager" row-count="2" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="8" column="1" row-span="1" col-span="4" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="b133d" class="javax.swing.JLabel" binding="amountJLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Poppins" size="14"/>
+              <horizontalTextPosition value="11"/>
+              <labelFor value="319dc"/>
+              <text resource-bundle="products" key="label.estoque.atual"/>
+              <toolTipText value=""/>
+            </properties>
+          </component>
+          <component id="319dc" class="javax.swing.JSpinner" binding="amountJSpinner">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="9" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+          </component>
+          <component id="5715b" class="javax.swing.JLabel" binding="minAmountJLabel">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Poppins" size="14"/>
+              <horizontalTextPosition value="11"/>
+              <labelFor value="750da"/>
+              <text resource-bundle="products" key="label.quantidade.minima.no.estoque"/>
+              <toolTipText value=""/>
+            </properties>
+          </component>
+          <component id="95cf0" class="javax.swing.JLabel" binding="soldAmountJLabel">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Poppins" size="14"/>
+              <horizontalTextPosition value="11"/>
+              <labelFor value="117f7"/>
+              <text resource-bundle="products" key="label.quantidade.vendida"/>
+              <toolTipText value=""/>
+            </properties>
+          </component>
+          <component id="750da" class="javax.swing.JSpinner" binding="minAmountJSpinner">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="9" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+          </component>
+          <component id="117f7" class="javax.swing.JSpinner" binding="soldAmountJSpinner">
+            <constraints>
+              <grid row="1" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="9" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+          </component>
+        </children>
+      </grid>
+      <vspacer id="f3948">
+        <constraints>
+          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <gridbag top="20" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+        </constraints>
+      </vspacer>
+      <component id="bec81" class="javax.swing.JLabel" binding="expirationDateJLabel">
+        <constraints>
+          <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="20" left="0" bottom="5" right="0" weightx="1.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <font name="Poppins" size="14"/>
+          <horizontalTextPosition value="11"/>
+          <text resource-bundle="products" key="label.data.de.vencimento"/>
+          <toolTipText value=""/>
+        </properties>
+      </component>
+      <vspacer id="3029a">
+        <constraints>
+          <grid row="9" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <gridbag top="20" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
+        </constraints>
+      </vspacer>
+      <hspacer id="2e205">
+        <constraints>
+          <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.3" weighty="0.0"/>
+        </constraints>
+      </hspacer>
+      <hspacer id="173a1">
+        <constraints>
+          <grid row="4" column="5" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.1" weighty="0.0"/>
+        </constraints>
+      </hspacer>
+      <grid id="924df" binding="buttonsJPanel" layout-manager="GridBagLayout">
+        <constraints>
+          <grid row="10" column="4" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="e3a5c" class="javax.swing.JButton" binding="saveJButton">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+              <gridbag top="0" left="20" bottom="0" right="0" weightx="0.0" weighty="1.0"/>
+            </constraints>
+            <properties>
+              <actionCommand value="save"/>
+              <label resource-bundle="products" key="button.salvar"/>
+              <text resource-bundle="products" key="button.salvar"/>
+            </properties>
+          </component>
+          <component id="37a82" class="javax.swing.JButton" binding="deleteButton">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag top="0" left="0" bottom="0" right="20" weightx="0.0" weighty="1.0"/>
+            </constraints>
+            <properties>
+              <actionCommand value="save"/>
+              <label resource-bundle="products" key="button.apagar"/>
+              <text resource-bundle="products" key="button.apagar"/>
+            </properties>
+          </component>
+          <vspacer id="5ad17">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
+            </constraints>
+          </vspacer>
+        </children>
+      </grid>
+    </children>
+  </grid>
+  <inspectionSuppressions>
+    <suppress inspection="NoLabelFor" id="a8fb1"/>
+    <suppress inspection="NoLabelFor" id="30c70"/>
+  </inspectionSuppressions>
+</form>

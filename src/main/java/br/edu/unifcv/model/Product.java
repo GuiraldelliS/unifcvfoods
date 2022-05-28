@@ -1,6 +1,9 @@
 package br.edu.unifcv.model;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,7 +26,7 @@ public class Product {
     private long id;
 
     @NotBlank
-    @Size(min = 3, max = 60)
+    @Size(min = 3, max = 30)
     private String description;
 
     @NotBlank
