@@ -9,10 +9,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import java.time.OffsetDateTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -25,30 +21,23 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @NotBlank
-    @Size(min = 3, max = 30)
-    private String description;
+    private String description = "";
 
-    @NotBlank
-    @Size(max = 255)
-    private String fullDescription;
+    private String fullDescription = "";
 
-    @NotNull
-    private double buyPrice;
+    private int buyPrice = 0;
 
-    @NotNull
-    private double sellPrice;
+    private int sellPrice = 0;
 
-    @NotNull
-    private int minAmount;
+    private int minAmount = 0;
 
-    @NotNull
-    private int amount;
+    private int amount = 0;
 
-    @NotNull
-    private int soldAmount;
+    private int soldAmount = 0;
 
-    @NotNull
-    private OffsetDateTime expirationDate;
+    @Override
+    public String toString() {
+        return this.description;
+    }
 
 }

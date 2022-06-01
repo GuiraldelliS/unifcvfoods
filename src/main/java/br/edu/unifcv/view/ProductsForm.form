@@ -32,6 +32,7 @@
           <font name="Poppins" style="0"/>
           <horizontalScrollBarPolicy value="31"/>
           <inheritsPopupMenu value="false"/>
+          <minimumSize width="268" height="130"/>
           <name value="Produtos"/>
           <requestFocusEnabled value="true"/>
           <verticalScrollBarPolicy value="22"/>
@@ -130,7 +131,7 @@
             <properties>
               <font name="Poppins" size="14"/>
               <horizontalTextPosition value="11"/>
-              <labelFor value="34c99"/>
+              <labelFor value="3090b"/>
               <text resource-bundle="products" key="label.preco.de.custo"/>
               <toolTipText value=""/>
             </properties>
@@ -149,12 +150,12 @@
             <properties>
               <font name="Poppins" size="14"/>
               <horizontalTextPosition value="11"/>
-              <labelFor value="dafef"/>
+              <labelFor value="9adce"/>
               <text resource-bundle="products" key="label.preco.de.venda"/>
               <toolTipText value=""/>
             </properties>
           </component>
-          <component id="dafef" class="javax.swing.JFormattedTextField" binding="sellPriceJFormattedTextField">
+          <component id="9adce" class="javax.swing.JSpinner" binding="sellPriceJSpinner">
             <constraints>
               <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="1" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -162,13 +163,12 @@
               <gridbag weightx="0.2" weighty="0.0"/>
             </constraints>
             <properties>
-              <focusLostBehavior value="0"/>
               <font name="Poppins Light" size="11" style="0"/>
               <maximumSize width="30" height="30"/>
               <preferredSize width="6" height="21"/>
             </properties>
           </component>
-          <component id="34c99" class="javax.swing.JFormattedTextField" binding="buyPriceFormattedTextField">
+          <component id="3090b" class="javax.swing.JSpinner" binding="buyPriceJSpinner">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="1" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -176,7 +176,6 @@
               <gridbag weightx="0.0" weighty="0.0"/>
             </constraints>
             <properties>
-              <focusLostBehavior value="0"/>
               <font name="Poppins Light" size="11" style="0"/>
               <maximumSize width="30" height="30"/>
               <preferredSize width="6" height="21"/>
@@ -261,18 +260,6 @@
           <gridbag top="20" left="0" bottom="0" right="0" weightx="0.0" weighty="0.0"/>
         </constraints>
       </vspacer>
-      <component id="bec81" class="javax.swing.JLabel" binding="expirationDateJLabel">
-        <constraints>
-          <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-          <gridbag top="20" left="0" bottom="5" right="0" weightx="1.0" weighty="0.0"/>
-        </constraints>
-        <properties>
-          <font name="Poppins" size="14"/>
-          <horizontalTextPosition value="11"/>
-          <text resource-bundle="products" key="label.data.de.vencimento"/>
-          <toolTipText value=""/>
-        </properties>
-      </component>
       <vspacer id="3029a">
         <constraints>
           <grid row="9" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
@@ -299,7 +286,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="e3a5c" class="javax.swing.JButton" binding="saveJButton">
+          <component id="e3a5c" class="javax.swing.JButton" binding="saveButton">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
               <gridbag top="0" left="20" bottom="0" right="0" weightx="0.0" weighty="1.0"/>

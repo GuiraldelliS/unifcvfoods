@@ -1,5 +1,6 @@
 package br.edu.unifcv.view;
 
+import br.edu.unifcv.exceptions.ProductNotFoundException;
 import br.edu.unifcv.model.Product;
 import br.edu.unifcv.service.ProductService;
 import org.springframework.stereotype.Component;
@@ -13,7 +14,8 @@ public class ProductsForm extends JFrame {
 
     private final ProductService productService;
     private final DefaultListModel<Object> productListModel;
-    private final List<Product> allProducts;
+
+    private Product currentProduct;
 
     private JPanel productJPanel;
     private JList<Object> productJList;
@@ -26,24 +28,22 @@ public class ProductsForm extends JFrame {
     private JLabel minAmountJLabel;
     private JLabel amountJLabel;
     private JLabel soldAmountJLabel;
-    private JLabel expirationDateJLabel;
     private JTextField descriptionJField;
     private JTextArea fullDescriptionJTextArea;
     private JScrollPane fullDescriptionJScrollPane;
-    private JFormattedTextField buyPriceFormattedTextField;
-    private JFormattedTextField sellPriceJFormattedTextField;
+    private JSpinner buyPriceJSpinner;
+    private JSpinner sellPriceJSpinner;
     private JSpinner amountJSpinner;
     private JSpinner minAmountJSpinner;
     private JPanel pricesJPanel;
     private JPanel amountsJPanel;
     private JSpinner soldAmountJSpinner;
     private JPanel buttonsJPanel;
-    private JButton saveJButton;
+    private JButton saveButton;
     private JButton deleteButton;
 
     public ProductsForm(ProductService productService) throws HeadlessException {
         this.productService = productService;
-        this.allProducts = this.productService.findAll();
         this.productListModel = new DefaultListModel<>();
         this.productJList.setModel(productListModel);
         this.productJList.setPrototypeCellValue("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
@@ -56,11 +56,71 @@ public class ProductsForm extends JFrame {
 
         this.refreshProductList();
 
+        productJList.addListSelectionListener(e -> setCurrentProduct((Product) productJList.getSelectedValue()));
+        deleteButton.addActionListener(e -> {
+            if (currentProduct != null) {
+                try {
+                    productService.delete(currentProduct.getId());
+                    JOptionPane.showMessageDialog(null, "Produto deletado com sucesso");
+                    refreshProductList();
+                } catch (ProductNotFoundException ex) {
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                }
+            }
+        });
+        saveButton.addActionListener(e -> {
+            if (currentProduct != null) {
+
+                Product product = new Product();
+                product.setDescription(descriptionJField.getText());
+                product.setFullDescription(fullDescriptionJTextArea.getText());
+                product.setBuyPrice((Integer) buyPriceJSpinner.getValue());
+                product.setSellPrice((Integer) sellPriceJSpinner.getValue());
+                product.setSoldAmount((Integer) soldAmountJSpinner.getValue());
+                product.setMinAmount((Integer) minAmountJSpinner.getValue());
+                product.setAmount((Integer) amountJSpinner.getValue());
+
+                try {
+                    productService.update(currentProduct.getId(), product);
+                } catch (ProductNotFoundException ex) {
+                    productService.add(product);
+                } finally {
+                    refreshProductList();
+                    JOptionPane.showMessageDialog(null, "Produto salvo com sucesso");
+                }
+            }
+        });
     }
 
     private void refreshProductList() {
         productListModel.removeAllElements();
-        this.allProducts.forEach(product -> this.productListModel.addElement(product.getDescription()));
+        List<Product> allProduct = productService.findAll();
+        if (!allProduct.isEmpty()) {
+            allProduct.forEach(this.productListModel::addElement);
+        }
+
+        Product newProduct = new Product();
+        newProduct.setDescription("Novo produto");
+
+        productListModel.addElement(newProduct);
+
+        productJPanel.repaint();
+        productJPanel.revalidate();
+
+    }
+
+    private void setCurrentProduct(Product product) {
+        if (product == null) return;
+
+        this.currentProduct = product;
+        this.descriptionJField.setText(product.getDescription());
+        this.fullDescriptionJTextArea.setText(product.getFullDescription());
+        this.buyPriceJSpinner.setValue(product.getBuyPrice());
+        this.sellPriceJSpinner.setValue(product.getSellPrice());
+        this.amountJSpinner.setValue(product.getAmount());
+        this.minAmountJSpinner.setValue(product.getMinAmount());
+        this.soldAmountJSpinner.setValue(product.getSoldAmount());
+
     }
 
 }
